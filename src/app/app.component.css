@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.toolbar {
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: orangered;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.titles {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.titles span {
+  width: 35%;
+  height: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
