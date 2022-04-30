@@ -1,6 +1,28 @@
 <div class="toolbar">
   <div class="titles">
     <span class="title">Everybody Votes </span>
+    <button (click)="this.goToCreatePoll()">Créer un sondage</button>
+    <span clas="login" *ngIf="!firebaseService.userIsLogged()" (click)="login()">
+      <div *ngIf="!isMobile" class="google-btn">
+         <div class="google-icon-wrapper">
+            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+         </div>
+         <p class="btn-text"><b>Sign in with google</b></p>
+      </div>
+     <div *ngIf="isMobile" class="google-btn-mobile">
+         <div class="google-icon-wrapper">
+            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+         </div>
+       <p class="btn-text"><b>Login</b></p>
+      </div>
+   </span>
+    <span class="logout" *ngIf="!isMobile && firebaseService.userIsLogged()">
+      <span class="username">{{this.firebaseService.username}}</span>
+      <button (click)="logout()" mat-stroked-button color="primary"><span>Se Déconnecter</span></button>
+  </span>
+    <span class="logout-mobile" *ngIf="isMobile && firebaseService.userIsLogged()">
+      <button (click)="logout()" mat-stroked-button color="primary"><mat-icon>logout</mat-icon></button>
+    </span>
   </div>
 </div>
 <app-polls></app-polls>
