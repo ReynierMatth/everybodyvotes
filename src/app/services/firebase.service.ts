@@ -45,6 +45,8 @@ export class FirebaseService {
   }
 
   onLogin(user: firebase.User | null) {
+    console.log("onlogin detected");
+    console.log(user);
     if (user) {
       this.setUserId(user.uid);
       this.getUserName();

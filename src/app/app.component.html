@@ -2,6 +2,7 @@
   <div class="titles">
     <span class="title">Everybody Votes </span>
     <button (click)="this.goToCreatePoll()">Créer un sondage</button>
+  </div>
     <span clas="login" *ngIf="!firebaseService.userIsLogged()" (click)="login()">
       <div *ngIf="!isMobile" class="google-btn">
          <div class="google-icon-wrapper">
@@ -18,11 +19,11 @@
    </span>
     <span class="logout" *ngIf="!isMobile && firebaseService.userIsLogged()">
       <span class="username">{{this.firebaseService.username}}</span>
-      <button (click)="logout()" mat-stroked-button color="primary"><span>Se Déconnecter</span></button>
-  </span>
+      <button (click)="logout()" mat-stroked-button color="warn">Se Déconnecter</button>
+
+    </span>
     <span class="logout-mobile" *ngIf="isMobile && firebaseService.userIsLogged()">
       <button (click)="logout()" mat-stroked-button color="primary"><mat-icon>logout</mat-icon></button>
     </span>
   </div>
-</div>
 <app-polls></app-polls>

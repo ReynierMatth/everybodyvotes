@@ -9,6 +9,9 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import { MatIconModule} from "@angular/material/icon";
 import {environment} from "../environments/environment";
+import {MatButtonModule} from "@angular/material/button";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {environment} from "../environments/environment";
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'everybodyvote'),
     AngularFireAuthModule,
-    MatIconModule
+    AngularFireDatabaseModule,
+    MatIconModule,
+    MatButtonModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
